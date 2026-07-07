@@ -2,14 +2,12 @@
 version: "3"
 services:
  devopsdb:
-   container_name: devopsdb
-   image: shaikmustafa/dockerproject:dbimage
+   image: sunayanrajgupta/dockerproject:dbimg-${BUILD_NUMBER}
    ports:
      - "3306:3306"
 
  application:
-   image: shaikmustafa/dockerproject:appimage
-   container_name: containerapp
+   image: sunayanrajgupta/dockerproject:appimg-${BUILD_NUMBER}
    ports:
      - "1234:8080"
    depends_on:
